@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Countdown ⏰</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-heart">💕</div>
+            <h2>Preparing Something Special...</h2>
+            <p>For Someone Special</p>
+        </div>
+    </div>
+    
+    <!-- Particle System -->
+    <div class="particles" id="particlesContainer"></div>
+    
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts" id="heartsContainer"></div>
+    
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" id="navLogo">⏰ Special Countdown</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#loveMessage" class="countdown-hidden" style="display: none;">Message</a></li>
+                <li><a href="#timeline" class="countdown-hidden" style="display: none;">Timeline</a></li>
+                <li><a href="#wishes" class="countdown-hidden" style="display: none;">Wishes</a></li>
+                <li><a href="#gallery" class="countdown-hidden" style="display: none;">Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Background Music (Hidden) -->
+    <audio id="birthdayMusic" loop>
+        <source src="music/monokrom.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <!-- Countdown Timer Only -->
+                <div class="countdown-container">
+                    <h3 class="countdown-title" id="countdownTitle">Hitung Mundur Hari Spesial ⏰</h3>
+                    <h4 class="countdown-subtitle" id="countdownSubtitle">Countdown to Your Special Day</h4>
+                    <div class="countdown" id="countdown">
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="days">00</div>
+                            <div class="countdown-label">Hari</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="hours">00</div>
+                            <div class="countdown-label">Jam</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="minutes">00</div>
+                            <div class="countdown-label">Menit</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="seconds">00</div>
+                            <div class="countdown-label">Detik</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="btn-group">
+                    <a href="#loveMessage" class="btn countdown-hidden" style="display: none;">Lihat Pesan Cinta 💝</a>
+                    <a href="#gallery" class="btn btn-secondary countdown-hidden" style="display: none;">Lihat Galeri 📸</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Love Message Section -->
+        <section id="loveMessage" class="section">
+            <div class="section-content">
+                <div class="card">
+                    <div class="card-inner">
+                        <h3 class="section-title dancing-script">Untuk Sayangku 💕</h3>
+                        <div class="message-text">
+                            <p>Di hari spesialmu, aku ingin mengucapkan selamat untuk wanita terindah dalam hidupku. Nama yang selalu membuatku tersenyum setiap kali aku menyebutnya.</p>
+                            
+                            <p>Terima kasih sudah hadir dalam hidupku, membawa warna, kebahagiaan, dan cinta yang tak terhingga. Setiap hari bersamamu adalah anugerah yang tak ternilai harganya.</p>
+                            
+                            <p>Semoga di usiamu yang baru ini, semua impianmu terwujud, kesehatan selalu menyertaimu, dan kebahagiaan selalu bersamamu di setiap langkahmu.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Timeline Section -->
+        <section id="timeline" class="section">
+            <div class="section-content">
+                <h3 class="section-title dancing-script">Timeline Cinta Kita 💕</h3>
+                <div class="timeline">
+                    <div class="timeline-item" style="animation-delay: 0.2s;">
+                        <div class="timeline-content">
+                            <h4>Pertemuan Pertama 🌟</h4>
+                            <p>Hari dimana mata kita bertemu untuk pertama kali</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-item" style="animation-delay: 0.4s;">
+                        <div class="timeline-content">
+                            <h4>Kencan Pertama 💝</h4>
+                            <p>Kencan pertama kita yang magis</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-item" style="animation-delay: 0.6s;">
+                        <div class="timeline-content">
+                            <h4>Jatuh Cinta 🌹</h4>
+                            <p>Saat kita tahu kita ditakdirkan bersama</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-item" style="animation-delay: 0.8s;">
+                        <div class="timeline-content">
+                            <h4>Hari Ini & Selamanya 💕</h4>
+                            <p>Setiap momen bersamamu sangat berharga</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Wishes Section -->
+        <section id="wishes" class="section">
+            <div class="section-content">
+                <h3 class="section-title dancing-script">Doa dan Harapan 🙏</h3>
+                <div class="wishes-grid">
+                    <div class="wish-card">
+                        <div class="wish-icon">🌟</div>
+                        <h4 class="wish-title">Kesuksesan</h4>
+                        <p class="wish-text">Semoga semua cita-citamu tercapai dan karirmu semakin cemerlang.</p>
+                    </div>
+                    <div class="wish-card">
+                        <div class="wish-icon">💖</div>
+                        <h4 class="wish-title">Kebahagiaan</h4>
+                        <p class="wish-text">Semoga bahagia selalu menyertaimu dalam setiap detik kehidupanmu.</p>
+                    </div>
+                    <div class="wish-card">
+                        <div class="wish-icon">🌈</div>
+                        <h4 class="wish-title">Kesehatan</h4>
+                        <p class="wish-text">Semoga selalu diberikan kesehatan yang prima dan panjang umur.</p>
+                    </div>
+                    <div class="wish-card">
+                        <div class="wish-icon">💫</div>
+                        <h4 class="wish-title">Cinta Abadi</h4>
+                        <p class="wish-text">Semoga cinta kita abadi selamanya.</p>
+                    </div>
+                    <div class="wish-card">
+                        <div class="wish-icon">🎯</div>
+                        <h4 class="wish-title">Target Hidup</h4>
+                        <p class="wish-text">Semoga semua target hidupmu tercapai.</p>
+                    </div>
+                    <div class="wish-card">
+                        <div class="wish-icon">🦋</div>
+                        <h4 class="wish-title">Transformasi</h4>
+                        <p class="wish-text">Semoga menjadi lebih baik setiap tahunnya.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Photo Gallery Section -->
+        <section id="gallery" class="section">
+            <div class="section-content">
+                <h3 class="section-title dancing-script">Kenangan Indah Kita 📸</h3>
+                
+                <!-- Gallery Content (Langsung terbuka) -->
+                <div class="gallery-content" id="galleryContent">
+                    <!-- Gallery Controls -->
+                    <div class="gallery-controls">
+                        <button class="gallery-btn" onclick="toggleSlideshow()" id="slideshowBtn">
+                            <span id="slideshowIcon">▶️</span> Slideshow Otomatis
+                        </button>
+                        <button class="gallery-btn" onclick="previousSlide()">
+                            ⬅️ Sebelumnya
+                        </button>
+                        <button class="gallery-btn" onclick="nextSlide()">
+                            Selanjutnya ➡️
+                        </button>
+                    </div>
+                    
+                    <!-- Main Gallery Display -->
+                    <div class="gallery-main">
+                        <div class="gallery-display" id="galleryDisplay">
+                            <div class="gallery-placeholder">📸</div>
+                        </div>
+                        <div class="gallery-info">
+                            <h4 id="galleryTitle">Memory 1</h4>
+                            <p id="galleryDescription">Beautiful moments together</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Thumbnail Gallery -->
+                    <div class="gallery-thumbnails" id="galleryThumbnails">
+                        <div class="gallery-item thumbnail" onclick="goToSlide(0)">
+                            <img src="photos/1.jpeg" alt="Kenangan Indah 1" style="width: 100%; height: 100%; object-fit: cover; border-radius: 13px;">
+                        </div>
+                        <div class="gallery-item thumbnail" onclick="goToSlide(1)">
+                            <img src="photos/2.jpeg" alt="Kenangan Indah 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 13px;">
+                        </div>
+                        <div class="gallery-item thumbnail" onclick="goToSlide(2)">
+                            <img src="photos/3.jpeg" alt="Kenangan Indah 3" style="width: 100%; height: 100%; object-fit: cover; border-radius: 13px;">
+                        </div>
+                        <div class="gallery-item thumbnail" onclick="goToSlide(3)">
+                            <img src="photos/4.jpeg" alt="Kenangan Indah 4" style="width: 100%; height: 100%; object-fit: cover; border-radius: 13px;">
+                        </div>
+                        <div class="gallery-item thumbnail" onclick="goToSlide(4)">
+                            <img src="photos/5.jpeg" alt="Kenangan Indah 5" style="width: 100%; height: 100%; object-fit: cover; border-radius: 13px;">
+                        </div>
+                        <div class="gallery-item thumbnail" onclick="goToSlide(5)">
+                            <img src="photos/6.jpeg" alt="Kenangan Indah 6" style="width: 100%; height: 100%; object-fit: cover; border-radius: 13px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
