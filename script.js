@@ -337,12 +337,12 @@ for (let i = 0; i < heartCount; i++) {
 
 // Gallery Slideshow functionality
 const galleryData = [
-    { image: './photos/1.jpeg', title: 'Kenangan Indah 1', description: 'Momen spesial bersama sayangku' },
-    { image: './photos/2.jpeg', title: 'Kenangan Indah 2', description: 'Waktu-waktu berharga kita' },
-    { image: './photos/3.jpeg', title: 'Kenangan Indah 3', description: 'Perjalanan cinta kita' },
-    { image: './photos/4.jpeg', title: 'Kenangan Indah 4', description: 'Momen romantis bersama' },
-    { image: './photos/5.jpeg', title: 'Kenangan Indah 5', description: 'Kebahagiaan dalam setiap detik' },
-    { image: './photos/6.jpeg', title: 'Kenangan Indah 6', description: 'Cinta kita abadi selamanya' }
+    { image: './photos/1.jpeg', title: 'Kenangan Indah 1' },
+    { image: './photos/2.jpeg', title: 'Kenangan Indah 2' },
+    { image: './photos/3.jpeg', title: 'Kenangan Indah 3' },
+    { image: './photos/4.jpeg', title: 'Kenangan Indah 4' },
+    { image: './photos/5.jpeg', title: 'Kenangan Indah 5' },
+    { image: './photos/6.jpeg', title: 'Kenangan Indah 6' }
 ];
 
 let currentSlide = 0;
