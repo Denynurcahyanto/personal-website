@@ -1,3 +1,6 @@
+// Mobile Detection and Performance Optimization
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+
 // Loading Screen
 window.addEventListener('load', function() {
     setTimeout(() => {
@@ -6,11 +9,13 @@ window.addEventListener('load', function() {
         setTimeout(() => {
             loadingScreen.style.display = 'none';
         }, 1000);
-    }, 2000);
+    }, isMobile ? 1000 : 2000); // Faster loading on mobile
 });
 
-// Particle System
+// Particle System - Reduce on mobile
 function createParticle() {
+    if (isMobile) return; // Skip particles on mobile
+    
     const particlesContainer = document.getElementById('particlesContainer');
     const particle = document.createElement('div');
     particle.className = 'particle';
@@ -24,15 +29,16 @@ function createParticle() {
     }, 20000);
 }
 
-// Create particles periodically
-setInterval(createParticle, 500);
+// Create particles periodically - Reduce frequency on mobile
+setInterval(createParticle, isMobile ? 2000 : 500);
 
-// Create initial particles
-for (let i = 0; i < 20; i++) {
+// Create initial particles - Reduce count on mobile
+const particleCount = isMobile ? 5 : 20;
+for (let i = 0; i < particleCount; i++) {
     setTimeout(createParticle, i * 100);
 }
 
-// Enhanced Floating Hearts
+// Enhanced Floating Hearts - Reduce on mobile
 function createHeart() {
     const heartsContainer = document.getElementById('heartsContainer');
     const heart = document.createElement('div');
@@ -49,8 +55,8 @@ function createHeart() {
     }, 8000);
 }
 
-// Create hearts periodically
-setInterval(createHeart, 800);
+// Create hearts periodically - Reduce frequency on mobile
+setInterval(createHeart, isMobile ? 2000 : 800);
 
 // Testing Mode - Bypass countdown (HAPUS atau comment ini di production)
 const TESTING_MODE = false; // Set true untuk testing, false untuk production
@@ -244,11 +250,12 @@ function playBirthdayMusic() {
     }
 }
 
-// Enhanced Click Effects
+// Enhanced Click Effects - Reduce on mobile
 function createFirework(event) {
     const colors = ['#FF6B6B', '#FFE66D', '#23d5ab', '#e73c7e', '#23a6d5'];
+    const particleCount = isMobile ? 10 : 30; // Reduce particles on mobile
     
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'firework-explosion';
         particle.style.left = event.clientX + 'px';
@@ -258,8 +265,8 @@ function createFirework(event) {
         particle.style.background = colors[Math.floor(Math.random() * colors.length)];
         particle.style.borderRadius = '50%';
         
-        const angle = (Math.PI * 2 * i) / 30;
-        const velocity = 100 + Math.random() * 100;
+        const angle = (Math.PI * 2 * i) / particleCount;
+        const velocity = (isMobile ? 50 : 100) + Math.random() * 50; // Reduce velocity on mobile
         const vx = Math.cos(angle) * velocity;
         const vy = Math.sin(angle) * velocity;
         
@@ -271,15 +278,16 @@ function createFirework(event) {
     }
 }
 
-// Birthday Celebration
+// Birthday Celebration - Reduce on mobile
 function celebrateBirthday() {
-    for (let i = 0; i < 50; i++) {
+    const fireworkCount = isMobile ? 10 : 50; // Reduce fireworks on mobile
+    for (let i = 0; i < fireworkCount; i++) {
         setTimeout(() => {
             createFirework({
                 clientX: Math.random() * window.innerWidth,
                 clientY: Math.random() * window.innerHeight
             });
-        }, i * 100);
+        }, i * (isMobile ? 200 : 100)); // Slower on mobile
     }
 }
 
@@ -321,19 +329,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add some initial hearts
-for (let i = 0; i < 8; i++) {
+// Add some initial hearts - Reduce on mobile
+const heartCount = isMobile ? 3 : 8;
+for (let i = 0; i < heartCount; i++) {
     setTimeout(createHeart, i * 300);
 }
 
 // Gallery Slideshow functionality
 const galleryData = [
-    { image: 'photos/1.jpeg', title: 'Kenangan Indah 1', description: 'Momen spesial bersama sayangku' },
-    { image: 'photos/2.jpeg', title: 'Kenangan Indah 2', description: 'Waktu-waktu berharga kita' },
-    { image: 'photos/3.jpeg', title: 'Kenangan Indah 3', description: 'Perjalanan cinta kita' },
-    { image: 'photos/4.jpeg', title: 'Kenangan Indah 4', description: 'Momen romantis bersama' },
-    { image: 'photos/5.jpeg', title: 'Kenangan Indah 5', description: 'Kebahagiaan dalam setiap detik' },
-    { image: 'photos/6.jpeg', title: 'Kenangan Indah 6', description: 'Hadiah terindah untuk kita' }
+    { image: './photos/1.jpeg', title: 'Kenangan Indah 1', description: 'Momen spesial bersama sayangku' },
+    { image: './photos/2.jpeg', title: 'Kenangan Indah 2', description: 'Waktu-waktu berharga kita' },
+    { image: './photos/3.jpeg', title: 'Kenangan Indah 3', description: 'Perjalanan cinta kita' },
+    { image: './photos/4.jpeg', title: 'Kenangan Indah 4', description: 'Momen romantis bersama' },
+    { image: './photos/5.jpeg', title: 'Kenangan Indah 5', description: 'Kebahagiaan dalam setiap detik' },
+    { image: './photos/6.jpeg', title: 'Kenangan Indah 6', description: 'Cinta kita abadi selamanya' }
 ];
 
 let currentSlide = 0;
@@ -404,7 +413,7 @@ function toggleSlideshow() {
         
         slideshowInterval = setInterval(() => {
             nextSlide();
-        }, 3000); // Change slide every 3 seconds
+        }, isMobile ? 5000 : 3000); // Slower on mobile to reduce battery drain
     }
 }
 
