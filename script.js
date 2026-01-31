@@ -98,7 +98,7 @@ function updateCountdown() {
         return;
     }
     
-    const birthday = new Date('JANUARI 2, 2026 18:02:00').getTime();
+    const birthday = new Date('Januari 2, 2026 18:02:00').getTime();
     const now = new Date().getTime();
     const distance = birthday - now;
     
